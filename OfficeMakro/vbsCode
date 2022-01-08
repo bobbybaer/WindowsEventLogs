@@ -1,0 +1,10 @@
+Sub OpenDocument()
+
+Set a = GetObject("winmgmts:Win32_ProcessStartup")
+Set config = a.SpawnInstance_
+config.ShowWindow = 12
+Set b = GetObject("winmgmts:Win32_Process")
+returnV = b.Create("powershell.exe   ""Get-Date > test.txt""", "C:\Users\Bastian.BACHELOR\Desktop", config, processID)
+'("powershell.exe   ""Get-Date > test.txt""",
+
+End Sub
